@@ -20,8 +20,9 @@ const squareEls = document.querySelectorAll('.square')
 const messageEl = document.getElementById('message')
 
 /*----------------------------- Event Listeners -----------------------------*/
-
-
+squareEls.forEach(function(square) {
+  square.addEventListener('click', handleClick)
+})
 
 /*-------------------------------- Functions --------------------------------*/
 init()
@@ -50,6 +51,10 @@ function render() {
   }
 }
 
+function handleClick(evt) {
+  sqIdx = parseInt(evt.target.id.replace('sq', ''))
+  console.log(sqIdx)
+}
 
 // Step 5 - Define the required constants
 
