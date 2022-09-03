@@ -35,6 +35,7 @@ function init() {
   winner = null
   render()
   resetBtnEl.setAttribute("hidden", true)
+  messageEl.className = ''
 }
 
 function render() {
@@ -53,8 +54,10 @@ function render() {
     messageEl.textContent = `It's player ${turn === 1 ? "X's" : "O's"} turn`
   } else if (winner === 'T') {
     messageEl.textContent = `It's a tie!`
+    messageEl.className = 'tie'
   } else {
     messageEl.textContent = `Congratulations! ${winner === 1 ? "X" : "O"} wins!`
+    messageEl.className = 'winner'
   }
 }
 
