@@ -42,21 +42,21 @@ function render() {
   resetBtnEl.removeAttribute('hidden')
   board.forEach((square, i) => {
     if (square === 1) {
-      squareEls[i].textContent = 'X'
+      squareEls[i].innerHTML = '&#128128;'
     } else if (square === -1) {
-      squareEls[i].textContent = 'O'
+      squareEls[i].innerHTML= '&#127875;'
     } else {
       squareEls[i].textContent = ''
     }
   })
   
   if (winner === null) {
-    messageEl.textContent = `It's player ${turn === 1 ? "X's" : "O's"} turn`
+    messageEl.textContent = `It's player ${turn === 1 ? "One's" : "Two's"} turn`
   } else if (winner === 'T') {
     messageEl.textContent = `It's a tie!`
     messageEl.className = 'tie'
   } else {
-    messageEl.textContent = `Congratulations! ${winner === 1 ? "X" : "O"} wins!`
+    messageEl.textContent = `Spooktacular! Player ${winner === 1 ? "One" : "Two"} wins!`
     messageEl.className = 'winner'
   }
 }
@@ -74,15 +74,15 @@ function handleClick(evt) {
 }
 
 function getWinner() {
-  if (!board.includes(null)) {
-    return 'T'
-  }
   for (let i = 0; i < winningCombos.length; i++) {
   if (board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] === 3) {
     return 1
   } else if (board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] === -3) {
     return -1
   }
+  }
+  if (!board.includes(null)) {
+    return 'T'
   }
   return null
 }
