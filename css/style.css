@@ -14,11 +14,13 @@ body {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 54px;
+  text-shadow: 0px 3px 3px rgba(172, 255, 47, 0.712); 
 }
 
 h2 {
   font-size: 30px;
+  text-shadow: 0px 3px 3px rgba(172, 255, 47, 0.712); 
 }
 
 section.board {
@@ -27,35 +29,27 @@ section.board {
   grid-template-columns: repeat(3, 10vmin);
   grid-gap: 0vmin;
   margin: 0 auto;
-  box-shadow: 2px 2px 20px;
+  box-shadow: 2px 2px 20px rgb(185, 19, 121);
   cursor: pointer;
+  background-color: rgba(14, 14, 15, 0.76);
 }
 
 div {
-  border: 3px dotted rgba(172, 255, 47, 0.712);
+  border: 3px solid rgba(172, 255, 47, 0.712);
   font-size: 6.5vmin;
   text-align: center;
   vertical-align: middle;
+  text-shadow: 0px 3px 6px rgba(172, 255, 47, 0.712); 
 }
 
-#sq0, #sq1, #sq2 {
+#sq0, #sq1, #sq2, #sq6, #sq7, #sq8 {
   border-top: none;
   border-bottom: none;
 }
 
-#sq6, #sq7, #sq8 {
-  border-bottom: none;
-  border-top: none;
-}
-
-#sq0, #sq3, #sq6 {
+#sq0, #sq2, #sq3, #sq5, #sq6, #sq8 {
   border-left: none;
   border-right: none;
-}
-
-#sq2, #sq5, #sq8 {
-  border-right: none;
-  border-left: none;
 }
 
 button {
@@ -78,8 +72,6 @@ button:hover {
 
 .winner {
   color: rgba(172, 255, 47, 0.712);
-}
-
-.tie {
-  color: darkorange;
+  text-shadow: 1px 1px 1px #000, 
+  3px 3px 5px rgb(185, 19, 121);
 }

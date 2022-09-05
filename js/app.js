@@ -54,7 +54,7 @@ function render() {
     messageEl.textContent = `It's player ${turn === 1 ? "One's" : "Two's"} turn`
   } else if (winner === 'T') {
     messageEl.textContent = `It's a tie!`
-    messageEl.className = 'tie'
+    messageEl.className = 'winner'
   } else {
     messageEl.textContent = `Spooktacular! Player ${winner === 1 ? "One" : "Two"} wins!`
     messageEl.className = 'winner'
