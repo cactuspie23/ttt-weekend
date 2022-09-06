@@ -12,7 +12,7 @@ const winningCombos = [
 ]
 
 /*---------------------------- Variables (state) ----------------------------*/
-let board, turn, winner
+let board, turn, winner, scream
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -36,6 +36,7 @@ function init() {
   render()
   resetBtnEl.setAttribute("hidden", true)
   messageEl.className = ''
+  scream = new Audio('./sounds/grez1_scream14.mp3')
 }
 
 function render() {
@@ -55,9 +56,11 @@ function render() {
   } else if (winner === 'T') {
     messageEl.textContent = `It's a tie!`
     messageEl.className = 'winner'
+    scream.play()
   } else {
     messageEl.textContent = `Spooktacular! Player ${winner === 1 ? "One" : "Two"} wins!`
     messageEl.className = 'winner'
+    scream.play()
   }
 }
 
